@@ -16,6 +16,9 @@ public class Lock_controller : MonoBehaviour
     private int Num3 = 0;
     private int Num4 = 0;
 
+    public string Password;
+    private string Txt_sum;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -128,7 +131,22 @@ public class Lock_controller : MonoBehaviour
 
                 } 
             } 
-        } 
+        }
+
+        Txt_sum = Txt1.text + Txt2.text + Txt3.text + Txt4.text;
+
+        Check_password(Password, Txt_sum);
+
     }
+
+    private void Check_password(string password, string answer)
+    { 
+        if (answer == password)
+        {
+            Debug.Log("Open");
+        }
+
+    }
+
 
 }
