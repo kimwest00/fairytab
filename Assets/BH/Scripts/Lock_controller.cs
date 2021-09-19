@@ -41,9 +41,9 @@ public class Lock_controller : MonoBehaviour
             RaycastHit2D hitButton = Physics2D.Raycast(ray.origin, ray.direction, distance, 1 << LayerMask.NameToLayer("Button")); // Button 레이어만 잡음 
             if (hit) { // 게임 배경화면 등이 눌렸을 때 에러가 발생하는 것을 방지하기 위한 부분 
                 if (hitButton) { // Button 눌렀을 때 
-                    if(ray.origin.x < -3) //좌표로 버튼 구분해서 숫자 조절
+                    if(ray.origin.x < -150 && ray.origin.x > -275) //좌표로 버튼 구분해서 숫자 조절
                     {
-                        if (ray.origin.y > 0)
+                        if (ray.origin.y > 0 && ray.origin.y < 200)
                         {
                             Num1 += 1;
                             if(Num1 == 10)
@@ -52,7 +52,7 @@ public class Lock_controller : MonoBehaviour
                             }
                             Txt1.text = Num1.ToString();
                         }
-                        else
+                        else if (ray.origin.y < 0 && ray.origin.y > -200)
                         {
                             Num1 -= 1;
                             if (Num1 == -1)
@@ -63,7 +63,7 @@ public class Lock_controller : MonoBehaviour
                         }
                     }
 
-                    if (ray.origin.x < 0 && ray.origin.x > -3)
+                    if (ray.origin.x < 0 && ray.origin.x > -150)
                     {
                         if (ray.origin.y > 0)
                         {
@@ -74,7 +74,7 @@ public class Lock_controller : MonoBehaviour
                             }
                             Txt2.text = Num2.ToString();
                         }
-                        else
+                        else if (ray.origin.y < 0 && ray.origin.y > -150)
                         {
                             Num2 -= 1;
                             if (Num2 == -1)
@@ -83,11 +83,15 @@ public class Lock_controller : MonoBehaviour
                             }
                             Txt2.text = Num2.ToString();
                         }
+                        else if (ray.origin.y < -150 && ray.origin.y > -250)
+                        {
+                            Move_Camera();
+                        }
                     }
 
-                    if (ray.origin.x > 0 && ray.origin.x < 3)
+                    if (ray.origin.x > 0 && ray.origin.x < 150)
                     {
-                        if (ray.origin.y > 0)
+                        if (ray.origin.y > 0 && ray.origin.y < 200)
                         {
                             Num3 += 1;
                             if (Num3 == 10)
@@ -96,7 +100,7 @@ public class Lock_controller : MonoBehaviour
                             }
                             Txt3.text = Num3.ToString();
                         }
-                        else
+                        else if (ray.origin.y < 0 && ray.origin.y > -150)
                         {
                             Num3 -= 1;
                             if (Num3 == -1)
@@ -105,11 +109,15 @@ public class Lock_controller : MonoBehaviour
                             }
                             Txt3.text = Num3.ToString();
                         }
+                        else if (ray.origin.y < -150 && ray.origin.y > -250)
+                        {
+                            Move_Camera();
+                        }
                     }
 
-                    if (ray.origin.x > 3)
+                    if (ray.origin.x > 150 && ray.origin.x < 275)
                     {
-                        if (ray.origin.y > 0)
+                        if (ray.origin.y > 0 && ray.origin.y < 200)
                         {
                             Num4 += 1;
                             if (Num4 == 10)
@@ -118,7 +126,7 @@ public class Lock_controller : MonoBehaviour
                             }
                             Txt4.text = Num4.ToString();
                         }
-                        else
+                        else if (ray.origin.y < 0 && ray.origin.y > -200)
                         {
                             Num4 -= 1;
                             if (Num4 == -1)
@@ -129,17 +137,16 @@ public class Lock_controller : MonoBehaviour
                         }
                     }
 
+                    Txt_sum = Txt1.text + Txt2.text + Txt3.text + Txt4.text;
+                    
+                    Check_Password(Password, Txt_sum);
+
                 } 
             } 
         }
-
-        Txt_sum = Txt1.text + Txt2.text + Txt3.text + Txt4.text;
-
-        Check_password(Password, Txt_sum);
-
     }
 
-    private void Check_password(string password, string answer)
+    private void Check_Password(string password, string answer)
     { 
         if (answer == password)
         {
@@ -148,5 +155,10 @@ public class Lock_controller : MonoBehaviour
 
     }
 
+    private void Move_Camera()
+    {
+        Vector3 pos = new Vector3(1200, 0, -10); // 원하는 위치로 카메라의 x, y 좌표 이동시키기
+        Camera.main.gameObject.transform.position = pos;
+    }
 
 }
