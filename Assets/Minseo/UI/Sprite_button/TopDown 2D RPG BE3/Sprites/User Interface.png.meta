@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: d79edf18a76e2654a9ac99f15de8b2b3
+guid: 1c9bc0d104c01934da10d4333b9dc48b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: Luna Idle
+      213: -4827201375843143100
+    second: Panel White
   - first:
-      213: 21300002
-    second: Luna Talk
+      213: 4229574389047005653
+    second: Panel Black
   - first:
-      213: 21300004
-    second: Luna Smile
+      213: -6578267993364069794
+    second: Button Accept
   - first:
-      213: 21300006
-    second: Luna Angry
+      213: -4296635770777405670
+    second: Talk Cursor
   - first:
-      213: 21300008
-    second: Ludo Idle
+      213: 8117750489508839553
+    second: Button Up
   - first:
-      213: 21300010
-    second: Ludo Talk
+      213: -1582703761720647702
+    second: Button Down
   - first:
-      213: 21300012
-    second: Ludo Smile
+      213: 6342293345636278915
+    second: Button Left
   - first:
-      213: 21300014
-    second: Ludo Angry
+      213: -8667803144176668281
+    second: Button Right
+  - first:
+      213: 3420474935965269878
+    second: Button Back
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -47,6 +50,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,7 +64,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -78,10 +82,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 1
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -135,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luna Idle
+      name: Panel White
       rect:
         serializedVersion: 2
         x: 0
-        y: 47
-        width: 34
-        height: 46
+        y: 25
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8cbec21ad9a5146a6399e187f79581
-      internalID: 21300000
+      spriteID: 442b79d9ce5520db0800000000000000
+      internalID: -4827201375843143100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Talk
+      name: Panel Black
       rect:
         serializedVersion: 2
-        x: 35
-        y: 47
-        width: 34
-        height: 46
+        x: 33
+        y: 25
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10d1fb6ab8887743bcc7bd68c6741db
-      internalID: 21300002
+      spriteID: 5d19c326f7772ba30800000000000000
+      internalID: 4229574389047005653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Smile
+      name: Button Accept
       rect:
         serializedVersion: 2
-        x: 70
-        y: 47
-        width: 34
-        height: 46
+        x: 66
+        y: 25
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d0300f67d92ace47949343e5fdd231c
-      internalID: 21300004
+      spriteID: e52863afc1c45b4a0800000000000000
+      internalID: -6578267993364069794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Angry
+      name: Talk Cursor
       rect:
         serializedVersion: 2
-        x: 105
-        y: 47
-        width: 34
-        height: 46
+        x: 99
+        y: 25
+        width: 10
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b3732da275df34fbc4cb7c50f9cedb
-      internalID: 21300006
+      spriteID: a177391f7884f54c0800000000000000
+      internalID: -4296635770777405670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Idle
+      name: Button Up
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
-        height: 46
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4843ffde443d13441982a64d625783d1
-      internalID: 21300008
+      spriteID: 1808d6e7f0b08a070800000000000000
+      internalID: 8117750489508839553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Talk
+      name: Button Down
       rect:
         serializedVersion: 2
-        x: 35
+        x: 25
         y: 0
-        width: 34
-        height: 46
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e21efaca3ed60ec4ea3bae9cada96e5d
-      internalID: 21300010
+      spriteID: aef57f1705b190ae0800000000000000
+      internalID: -1582703761720647702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Smile
+      name: Button Left
       rect:
         serializedVersion: 2
-        x: 70
+        x: 50
         y: 0
-        width: 34
-        height: 46
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5659a6b8893ed4c4d81d88ec467912bf
-      internalID: 21300012
+      spriteID: 38269f7e13a540850800000000000000
+      internalID: 6342293345636278915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Angry
+      name: Button Right
       rect:
         serializedVersion: 2
-        x: 105
+        x: 75
         y: 0
-        width: 34
-        height: 46
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,8 +303,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dc061a7811deba4d9b619fc30822d12
-      internalID: 21300014
+      spriteID: 781f550e6f6c5b780800000000000000
+      internalID: -8667803144176668281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button Back
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f3651f4d7f77f20800000000000000
+      internalID: 3420474935965269878
       vertices: []
       indices: 
       edges: []
@@ -305,7 +333,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fee967a87b2e38d46a8002bf33a83ea2
+    spriteID: 87f44f085389b674e8a064f2e9320eee
     internalID: 0
     vertices: []
     indices: 

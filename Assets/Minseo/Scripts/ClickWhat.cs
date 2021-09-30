@@ -12,11 +12,11 @@ public class ClickWhat : MonoBehaviour
     // Start is called before the first frame update
     public void Click()
     {
-        
-        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
-        //print(clickObject.name+", "+clickObject.GetComponentInChildren<Text>().text);
-        talkText.text = clickObject.GetComponentInChildren<Text>().text;
         talkPanel.SetActive(true);
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        print(clickObject.name+", "+clickObject.GetComponentInChildren<Text>().text);
+        talkText.text = clickObject.GetComponentInChildren<Text>().text;
+        
     }
     public void Close()
     {
