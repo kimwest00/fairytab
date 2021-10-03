@@ -17,6 +17,7 @@ public class Lock_controller : MonoBehaviour
     private int Num4 = 0;
 
     public string Password;
+    public int Back_x, Back_y;
     private string Txt_sum;
 
     // Start is called before the first frame update
@@ -41,100 +42,81 @@ public class Lock_controller : MonoBehaviour
             RaycastHit2D hitButton = Physics2D.Raycast(ray.origin, ray.direction, distance, 1 << LayerMask.NameToLayer("Button")); // Button 레이어만 잡음 
             if (hit) { // 게임 배경화면 등이 눌렸을 때 에러가 발생하는 것을 방지하기 위한 부분 
                 if (hitButton) { // Button 눌렀을 때 
-                    if(ray.origin.x < -150 && ray.origin.x > -275) //좌표로 버튼 구분해서 숫자 조절
+                    if(hitButton.transform.gameObject == GameObject.Find("Arrow_u1")) //좌표로 버튼 구분해서 숫자 조절
                     {
-                        if (ray.origin.y > 0 && ray.origin.y < 200)
+                        Num1 += 1;
+                        if(Num1 == 10)
                         {
-                            Num1 += 1;
-                            if(Num1 == 10)
-                            {
-                                Num1 = 0;
-                            }
-                            Txt1.text = Num1.ToString();
+                            Num1 = 0;
                         }
-                        else if (ray.origin.y < 0 && ray.origin.y > -200)
+                        Txt1.text = Num1.ToString();
+                        }
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_d1"))
+                    {
+                        Num1 -= 1;
+                        if (Num1 == -1)
                         {
-                            Num1 -= 1;
-                            if (Num1 == -1)
-                            {
-                                Num1 = 9;
-                            }
-                            Txt1.text = Num1.ToString();
+                            Num1 = 9;
                         }
+                        Txt1.text = Num1.ToString();
                     }
-
-                    if (ray.origin.x < 0 && ray.origin.x > -150)
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_u2"))
                     {
-                        if (ray.origin.y > 0)
+                        Num2 += 1;
+                        if (Num2 == 10)
                         {
-                            Num2 += 1;
-                            if (Num2 == 10)
-                            {
-                                Num2 = 0;
-                            }
-                            Txt2.text = Num2.ToString();
+                            Num2 = 0;
                         }
-                        else if (ray.origin.y < 0 && ray.origin.y > -150)
-                        {
-                            Num2 -= 1;
-                            if (Num2 == -1)
-                            {
-                                Num2 = 9;
-                            }
-                            Txt2.text = Num2.ToString();
-                        }
-                        else if (ray.origin.y < -150 && ray.origin.y > -250)
-                        {
-                            Move_Camera();
-                        }
+                        Txt2.text = Num2.ToString();
                     }
-
-                    if (ray.origin.x > 0 && ray.origin.x < 150)
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_d2"))
                     {
-                        if (ray.origin.y > 0 && ray.origin.y < 200)
+                        Num2 -= 1;
+                        if (Num2 == -1)
                         {
-                            Num3 += 1;
-                            if (Num3 == 10)
-                            {
-                                Num3 = 0;
-                            }
-                            Txt3.text = Num3.ToString();
+                            Num2 = 9;
                         }
-                        else if (ray.origin.y < 0 && ray.origin.y > -150)
-                        {
-                            Num3 -= 1;
-                            if (Num3 == -1)
-                            {
-                                Num3 = 9;
-                            }
-                            Txt3.text = Num3.ToString();
-                        }
-                        else if (ray.origin.y < -150 && ray.origin.y > -250)
-                        {
-                            Move_Camera();
-                        }
+                        Txt2.text = Num2.ToString();
                     }
-
-                    if (ray.origin.x > 150 && ray.origin.x < 275)
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_u3"))
                     {
-                        if (ray.origin.y > 0 && ray.origin.y < 200)
+                        Num3 += 1;
+                        if (Num3 == 10)
                         {
-                            Num4 += 1;
-                            if (Num4 == 10)
-                            {
-                                Num4 = 0;
-                            }
-                            Txt4.text = Num4.ToString();
+                            Num3 = 0;
                         }
-                        else if (ray.origin.y < 0 && ray.origin.y > -200)
+                        Txt3.text = Num3.ToString();
+                    }
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_d3"))
+                    {
+                        Num3 -= 1;
+                        if (Num3 == -1)
                         {
-                            Num4 -= 1;
-                            if (Num4 == -1)
-                            {
-                                Num4 = 9;
-                            }
-                            Txt4.text = Num4.ToString();
+                            Num3 = 9;
                         }
+                        Txt3.text = Num3.ToString();
+                    }
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_u4"))
+                    {
+                        Num4 += 1;
+                        if (Num4 == 10)
+                        {
+                            Num4 = 0;
+                        }
+                        Txt4.text = Num4.ToString();
+                    }
+                    else if (hitButton.transform.gameObject == GameObject.Find("Arrow_d4"))
+                    {
+                        Num4 -= 1;
+                        if (Num4 == -1)
+                        {
+                            Num4 = 9;
+                        }
+                        Txt4.text = Num4.ToString();
+                    }
+                    else if (hitButton.transform.gameObject == GameObject.Find("Back"))
+                    {
+                        Move_Camera(Back_x, Back_y);
                     }
 
                     Txt_sum = Txt1.text + Txt2.text + Txt3.text + Txt4.text;
@@ -155,9 +137,9 @@ public class Lock_controller : MonoBehaviour
 
     }
 
-    private void Move_Camera()
+    private void Move_Camera(int x, int y)
     {
-        Vector3 pos = new Vector3(1200, 0, -10); // 원하는 위치로 카메라의 x, y 좌표 이동시키기
+        Vector3 pos = new Vector3(x, y, -10); // 원하는 위치로 카메라의 x, y 좌표 이동시키기
         Camera.main.gameObject.transform.position = pos;
     }
 
