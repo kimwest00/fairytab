@@ -17,6 +17,7 @@ public class Lock_controller : MonoBehaviour
     private int Num4 = 0;
 
     public string Password;
+    public int Back_x, Back_y;
     private string Txt_sum;
 
     // Start is called before the first frame update
@@ -115,7 +116,7 @@ public class Lock_controller : MonoBehaviour
                     }
                     else if (hitButton.transform.gameObject == GameObject.Find("Back"))
                     {
-                        Move_Camera(1200, 0);
+                        Move_Camera(Back_x, Back_y);
                     }
 
                     Txt_sum = Txt1.text + Txt2.text + Txt3.text + Txt4.text;
