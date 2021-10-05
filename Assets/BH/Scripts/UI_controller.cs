@@ -26,7 +26,7 @@ public class UI_controller : MonoBehaviour
             if (hit)
             { // 게임 배경화면 등이 눌렸을 때 에러가 발생하는 것을 방지하기 위한 부분 
                 if (hitArrow)
-                { // Button 눌렀을 때 
+                { 
                     if (hitArrow.transform.gameObject == GameObject.Find("RightArrow"))
                     {
                         if (Current_screen == 2)
