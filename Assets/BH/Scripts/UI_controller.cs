@@ -7,6 +7,7 @@ public class UI_controller : MonoBehaviour
 {
     public int Current_screen;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class UI_controller : MonoBehaviour
             if (hit)
             { // 게임 배경화면 등이 눌렸을 때 에러가 발생하는 것을 방지하기 위한 부분 
                 if (hitArrow)
-                { // Button 눌렀을 때 
+                { 
                     if (hitArrow.transform.gameObject == GameObject.Find("RightArrow"))
                     {
                         if (Current_screen == 2)
@@ -40,7 +41,7 @@ public class UI_controller : MonoBehaviour
 
                         Move_Camera(Current_screen * 30, 0);
                     }
-                    else
+                    else if (hitArrow.transform.gameObject == GameObject.Find("LeftArrow"))
                     {
                         if (Current_screen == 0)
                         {
@@ -58,6 +59,42 @@ public class UI_controller : MonoBehaviour
             }
         }
     }
+
+    /*private void Active_Arrows(int L, int R, int U, int D)
+    {
+        if(L == 1)
+        {
+            LeftArrow.gameObject.SetActive(true);
+        }
+        else
+        {
+            LeftArrow.gameObject.SetActive(false);
+        }
+        if (R == 1)
+        {
+            RightArrow.gameObject.SetActive(true);
+        }
+        else
+        {
+            RightArrow.gameObject.SetActive(false);
+        }
+        if (U == 1)
+        {
+            UpArrow.gameObject.SetActive(true);
+        }
+        else
+        {
+            UpArrow.gameObject.SetActive(false);
+        }
+        if (D == 1)
+        {
+            DownArrow.gameObject.SetActive(true);
+        }
+        else
+        {
+            DownArrow.gameObject.SetActive(false);
+        }
+    }*/
 
     private void Move_Camera(int x, int y)
     {
