@@ -9,7 +9,8 @@ public enum ItemTypeList //아이템 종류 리스트
     Circle,
     Heart,
     Note,
-    Key_1
+    Key_1,
+    Pencil
 }
 
 [System.Serializable]
