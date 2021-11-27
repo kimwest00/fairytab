@@ -17,7 +17,6 @@ public class Lock_controller : MonoBehaviour
     private int Num4 = 0;
 
     public string Password;
-    public int Back_x, Back_y;
     private string Txt_sum;
 
     // Start is called before the first frame update
@@ -114,14 +113,14 @@ public class Lock_controller : MonoBehaviour
                         }
                         Txt4.text = Num4.ToString();
                     }
-                    else if (hitButton.transform.gameObject == GameObject.Find("Back"))
+                    else if (hitButton.transform.gameObject == GameObject.Find("Check"))
                     {
-                        Move_Camera(Back_x, Back_y);
+                        Check_Password(Password, Txt_sum);
                     }
 
                     Txt_sum = Txt1.text + Txt2.text + Txt3.text + Txt4.text;
                     
-                    Check_Password(Password, Txt_sum);
+                    
 
                 } 
             } 
@@ -133,14 +132,9 @@ public class Lock_controller : MonoBehaviour
         if (answer == password)
         {
             Debug.Log("Open");
+            this.gameObject.SetActive(false);
         }
 
-    }
-
-    private void Move_Camera(int x, int y)
-    {
-        Vector3 pos = new Vector3(x, y, -10); // 원하는 위치로 카메라의 x, y 좌표 이동시키기
-        Camera.main.gameObject.transform.position = pos;
     }
 
 }

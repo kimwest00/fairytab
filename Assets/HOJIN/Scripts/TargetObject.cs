@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetObject : MonoBehaviour
 {
     public ItemTypeList TargetType;
-
+    public bool Chest_3_open = false;
     private PolygonCollider2D coll; //타겟의 콜라이더
     //private bool isComplete = false; //완료되었는지 여부
 
@@ -16,14 +16,15 @@ public class TargetObject : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void CorrectEvent()
     {
-        Debug.Log("Use item");
-        //isComplete = true;
-        //이벤트 진행
-        Destroy(this.gameObject);
-    }
+        if (this.gameObject.name == "Keyhole_1")
+        {
+            Debug.Log("Use item");
+            Chest_3_open = true;
+        }
+    } 
 }

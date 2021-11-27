@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 8939042138004729096}
   - component: {fileID: 8939042138004729095}
   m_Layer: 3
-  m_Name: Back
+  m_Name: Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,6 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Password: 1234
+  Back_x: 0
+  Back_y: 0
 --- !u!1 &8939042138288377562
 GameObject:
   m_ObjectHideFlags: 0

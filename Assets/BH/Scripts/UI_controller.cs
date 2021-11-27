@@ -96,7 +96,7 @@ public class UI_controller : MonoBehaviour
         }
     }*/
 
-    private void Move_Camera(int x, int y)
+    public void Move_Camera(int x, int y)
     {
         Vector3 pos = new Vector3(x, y, -10); // 원하는 위치로 카메라의 x, y 좌표 이동시키기
         Camera.main.gameObject.transform.position = pos;

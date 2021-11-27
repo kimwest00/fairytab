@@ -23,11 +23,48 @@ public class ObjectInteraction : MonoBehaviour
             if (hit.collider != null) //무언가 클릭 된 것이 있다면
             {
                 GameObject rayObj = hit.collider.gameObject;
-                if (rayObj.layer == LayerMask.NameToLayer("Object")) //씬에 배치된 아이템이 선택됐다면 + 인벤토리의 아이템이 선택되어 있지 않은 상태일 때
+                if (rayObj.layer == LayerMask.NameToLayer("Object")) //씬에 배치된 아이템이 선택됐다면
                 {
-                    if (rayObj == "Carpet")
-                    rayObj.SetActive(false); //클릭된 객체는 비활성화시켜서 사라지게 만들기
-                    Debug.Log(rayObj);
+                    if (rayObj.name == "Carpet_1")
+                    {
+                        rayObj.SetActive(false); //클릭된 객체는 비활성화시켜서 사라지게 만들기
+                        Debug.Log(rayObj);
+                    }
+                    else if (rayObj.name == "Carpet")
+                    {
+                        GameObject.Find("Canvas").GetComponent<UI_controller>().Move_Camera(90, 0);
+                        Debug.Log(rayObj);
+                    }
+                    else if (rayObj.name == "Chest_2")
+                    {
+                        if (rayObj.transform.GetChild(0).gameObject.activeSelf == false)
+                        {
+                            rayObj.transform.localPosition = new Vector2(0, -0.22f);
+                            rayObj.transform.GetChild(0).gameObject.SetActive(true);
+                        }
+                        else
+                        {
+                            rayObj.transform.localPosition = new Vector2(0, 0);
+                            rayObj.transform.GetChild(0).gameObject.SetActive(false);
+                        }
+                    }
+                    else if (rayObj.name == "Chest_3")
+                    {
+                        if (GameObject.Find("Keyhole_1").GetComponent<TargetObject>().Chest_3_open == true)
+                        {
+
+                            if (rayObj.transform.GetChild(0).gameObject.activeSelf == false)
+                            {
+                                rayObj.transform.localPosition = new Vector2(0, -0.52f);
+                                rayObj.transform.GetChild(0).gameObject.SetActive(true);
+                            }
+                            else
+                            {
+                                rayObj.transform.localPosition = new Vector2(0, -0.3f);
+                                rayObj.transform.GetChild(0).gameObject.SetActive(false);
+                            }
+                        }
+                    }
                 }
             }
         }
